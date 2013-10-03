@@ -1,0 +1,489 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+<title>学生信息查询</title>
+
+	<link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet" />
+<style type="text/css">
+	  body {
+		padding-bottom: 40px;
+	  }
+	  .sidebar-nav {
+		padding: 9px 0;
+	  }
+	</style>
+
+<link href="css/charisma-app.css" rel="stylesheet" />
+
+
+            
+</head>
+
+<body><table width="90%" align="center" border="0" cellpadding="0" cellspacing="0">
+      
+  <tr>
+    <td height="40" colspan="3" valign="top"><div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-fluid"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="http://www.jxau.edu.cn/"> <img alt="Charisma Logo" src="img/getimage.jpg" /> <span>南昌航空大学</span></a>      
+            <div class="btn-group pull-right" > <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-user"></i><span class="hidden-phone"> 管理员退出</span></li><span class="caret"></span> </a>   
+               
+            </div>
+              
+            <div class="top-nav nav-collapse">
+              <ul class="nav">
+                <li><a href="#">学生信息管理系统</a></li>
+              </ul>
+            </div>
+              
+        </div>
+      </div>
+    </div></td>
+  </tr>
+  <tr>
+  <td height="10" colspan="3"></td>
+  </tr>
+  <tr>
+    <td width="200" height="100%" valign="top">
+	<ul class="nav nav-tabs nav-stacked main-menu">
+      <li class="nav-header hidden-tablet">菜单</li>
+	  <li><a class="ajax-link" href="man_index.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 管理员的主页</span></a></li>
+	  <li><a class="ajax-link" href="man_getStdInfo.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 查看学生信息</span></a></li>
+	  <li><a class="ajax-link" href="man_upStdInfo.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 修改学生信息</span></a></li>
+	  <li><a class="ajax-link" href="man_saveStdInfo.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 录入学生信息</span></a></li>
+	  <li><a class="ajax-link" href="man_getStdScore.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 查看学生成绩单</span></a></li>
+	  <li><a class="ajax-link" href="man_upStdScore.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 修改学生成绩单</span></a></li>	  
+      <li><a class="ajax-link" href="man_saveStdScore.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 录入学生成绩单</span></a></li>	  
+	   <li><a class="ajax-link" href="man_getNotion.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 发布公告等<span ><font color="#FF0000">(消息1)</font></span></span></a></li>
+	</ul>
+    </td>
+	    <td width="5"></td>
+    <td width="861" valign="top">   
+	<div id="basicInfo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">小麦的基本信息</h3>
+  </div>
+  <div class="box-content">
+                  <table width="100%" class="table table-striped table-bordered bootstrap-datatable datatable"  >
+          <tr>
+            <td width="133" bgcolor="#FFFFFF"><div align="center"><span  class="STYLE9">学号 </span></div></td>
+            <td width="144" bgcolor="#FFFFFF"><div align="center"><span align="center" class="STYLE9"></span>20091821</div></td>
+            <td width="86" bgcolor="#FFFFFF"><div align="center"><span align="center" class="STYLE9">姓名 </span></div></td>
+            <td width="144" bgcolor="#FFFFFF"><div align="center"><span align="center" class="STYLE9"></span>罗伟富</div></td>
+            <td width="130" bgcolor="#FFFFFF"><div align="center"><span align="center" class="STYLE9">性别 </span></div></td>
+            <td width="182" bgcolor="#FFFFFF"><div align="center"><span align="center" class="STYLE9"></span>女</div></td>
+            <td width="144" height="120" rowspan="5" bgcolor="#FFFFFF"><span class="STYLE9"></span><img src="img/luoweifu.jpg" alt="protrait" width="90" height="120" /></td>
+          </tr>
+          <tr>
+            <td width="133" bgcolor="#FFFFFF"><div align="center" class="STYLE9">民族 </div></td>
+            <td width="144" bgcolor="#FFFFFF"><div align="center"><span class="STYLE9"></span>汉族</div></td>
+            <td width="86" bgcolor="#FFFFFF"><div align="center" class="STYLE9">政治面貌 </div></td>
+            <td width="144" bgcolor="#FFFFFF"><div align="center"><span class="STYLE9"></span>预备党员</div></td>
+            <td width="130" bgcolor="#FFFFFF"><div align="center" class="STYLE9">籍贯 </div></td>
+            <td width="182" bgcolor="#FFFFFF"><div align="center"><span class="STYLE9"></span>赣州</div></td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF"><div align="center" class="STYLE9">学院 </div></td>
+            <td bgcolor="#FFFFFF"><div align="center"><span class="STYLE9"></span>软件学院</div></td>
+            <td bgcolor="#FFFFFF"><div align="center" class="STYLE9">学历 </div></td>
+            <td width="144" bgcolor="#FFFFFF"><div align="center"><span class="STYLE9"></span>本科</div></td>
+            <td bgcolor="#FFFFFF"><div align="center" class="STYLE9">银行账号</div></td>
+            <td bgcolor="#FFFFFF"><div align="center"><span class="STYLE9"></span>62202 18070514242</div></td>
+            </tr>
+          <tr>
+            <td bgcolor="#FFFFFF"><div align="center" class="STYLE9">英语等级</div></td>
+            <td bgcolor="#FFFFFF"><div align="center"><span class="STYLE9"></span>六级</div></td>
+            <td bgcolor="#FFFFFF"><div align="center" class="STYLE9">计算机等级</div></td>
+            <td width="144" bgcolor="#FFFFFF"><div align="center"><span class="STYLE9"></span>国家二级</div></td>
+            <td bgcolor="#FFFFFF"><div align="center" class="STYLE9">辅修专业&nbsp;</div></td>
+            <td bgcolor="#FFFFFF"><div align="center"><span class="STYLE9"></span>工商管理</div></td>
+            </tr>
+          <tr>
+            <td bgcolor="#FFFFFF"><div align="center" class="STYLE9">出生年月 </div></td>
+            <td bgcolor="#FFFFFF"><div align="center"><span class="STYLE9"></span>1993-07-03</div></td>
+            <td bgcolor="#FFFFFF"><div align="center" class="STYLE9">学制 </div></td>
+            <td width="144" bgcolor="#FFFFFF"><div align="center"><span class="STYLE9"></span>四年</div></td>
+            <td bgcolor="#FFFFFF"><div align="center" class="STYLE9">个人邮箱 </div></td>
+            <td bgcolor="#FFFFFF"><div align="center"><span class="STYLE9">luoweifu@126.com</span></div></td>
+            </tr>
+          
+          <tr>
+            <td colspan="2" bgcolor="#FFFFFF"><div align="center" class="STYLE9">联系电话 </div></td>
+            <td colspan="3" bgcolor="#FFFFFF"><div align="center"><span class="STYLE9">18770052380</span></div></td>
+            <td width="182" bgcolor="#FFFFFF"><div align="center" class="STYLE9">身份证号 </div></td>
+            <td colspan="2" bgcolor="#FFFFFF"><div align="center"><span class="STYLE9">360733xxxxxxxxxxxx</span></div></td>
+          </tr>
+          <tr>
+            <td colspan="2" bgcolor="#FFFFFF"><div align="center" class="STYLE9">家庭通讯地址 </div></td>
+            <td colspan="6" bgcolor="#FFFFFF"><div align="center"><span class="STYLE9">江西省 赣州市 会昌县 站塘乡 罗坊村 xx组</span></div></td>
+            </tr>
+          <tr>
+            <td colspan="2" bgcolor="#FFFFFF"><div align="center" class="STYLE9">家庭联系电话 </div></td>
+            <td colspan="3" bgcolor="#FFFFFF"><div align="center"><span class="STYLE9">1336177xxxx</span></div></td>
+            <td bgcolor="#FFFFFF"><span class="STYLE9">家庭联系人</span></td>
+            <td colspan="2" bgcolor="#FFFFFF"><div align="center"><span class="STYLE9"></span></div></td>
+            </tr>
+        </table>
+            </div>  
+</div>
+
+<div id="upInfo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" >×</button>
+    <h3 id="myModalLabel">基本信息</h3>
+  </div>
+<div class="box-content">
+        <form action="#" enctype="multipart/form-data" name="isForm" method="post">
+		 <table    class="table table-striped table-bordered bootstrap-datatable datatable">
+			   <tr>
+			   	<td width="102"><p>学号</p>
+				<p>&nbsp;</p></td>
+				<td><input type="text" class="input-small" name="std_address" /> </td>
+				<th width="102">姓名</th>
+				<th width="72"><input type="text" class="input-small" name="std_name" /> </th>
+				<th width="102" >性别</th>
+				<th width="99"  align="center">
+                <label class="radio">
+<input type="radio" name="man" value="man" />男&nbsp;&nbsp;&nbsp;&nbsp;
+</label>
+ <label class="radio">
+             <input type="radio" name="man" value="woman"/>女<br />
+             </label>
+</th>				
+				<th width="140"  align="center">照片(个人)</th>
+			 </tr>
+			 <tr>
+			 	<th width="88"   align="center">民族</th>
+				<th width="102"  align="center"><input type="text" class="input-small" name="std_name" /></th>
+				<td height="38"><strong>籍贯</strong></td>
+				<td><input type="text" class="input-small" name="std_address" /> </td>
+				<td width="102"><p><strong>政治</strong></p>
+				  <p><strong>  面貌 </strong></p></td>
+				<td><input type="text" class="input-small" name="std_address" /> </td>				
+				<td rowspan="3" align="center" valign="middle"> <input type="file" class="input-mini" name="uploadFile" >上传</button></td>
+			 </tr>	
+			  <tr>
+			  	<td width="102"><strong>学院</strong></td>
+				<td><input type="text" class="input-small" name="std_address" /> </td>
+				<td width="102"><p>专业</p>
+				<p >&nbsp;</p></td>
+				<td><input type="text" class="input-small" name="std_address" /> </td>
+				
+				<td width="102">班级 </td>
+				<td><input type="text" class="input-small" name="std_address" /> </td>				
+			</tr>
+			  <tr>
+				<td width="102">手机号码</td>
+				<td height="48"><input type="text" class="input-small" name="std_address" /> </td>
+				<td width="102">个人邮箱</td>
+				<td><input type="text" class="input-small" name="std_address" /> </td>
+				<td width="102">学历 </td>
+				<td><input type="text" class="input-small" name="std_address" /> </td>
+			</tr>
+			<tr>
+				<td width="102">英语证书</td>
+				<td width="102"><input type="text" class="input-small" name="std_address" /> </td>				
+				<td>父母</td>
+				<td><input type="text" class="input-small" name="std_address" /> </td>
+				<td width="102">家庭联系电话</td>
+				<td><input type="text" class="input-small" name="std_address" />  </td>
+			 </tr>
+			
+				<td><div align="center">身份证号</div></td>
+				<td width="102" colspan="3"><input type="text" class="input-large" name="std_address" /> </td>
+				<td width="102">家庭地址</td>
+				<td colspan="2"><input type="text" class="input-large" name="std_address" /> </td>
+			 </tr>
+			 <tr>
+				<td colspan="7">
+					<div align="center" >
+					<button class="btn btn-primary"><i class="icon-inbox icon-white"></i>保存</button>
+                    <button type="reset"  class="btn  btn-inverse" name="reset" ><i class="icon-remove"></i>清除</button>
+					</div>
+				</td>
+			 </tr></table> 
+		</div>
+        </div>
+		</div>
+        </form>
+
+     
+      <div class="tab-content">
+        <div class="tab-pane active" id="home">
+			<div class="box span12">
+        <div class="box-header well" data-original-title="data-original-title">
+          <h2><i class="icon-user"></i>基本信息</h2>
+         <div class="box-icon"> <input name="checkbox11" type="checkbox" value="checkbox" />全选   <button class="btn"><i class="icon-refresh"></i>批量更新</button> <button class="btn"><i class="icon-edit"></i>批量修改</button> <button class="btn"><i class="icon-print"></i>导出</button> </div>
+        </div>
+		    <form class="well form-search"><table>
+		<tr><td>学院<select name="学院" class="span2" ><option>软件院</option><option> 研究生学院</option><option>  体育学院</option>
+	</select>专业<select name="专业" class="span2"><option>软件工程</option><option>数字媒体</option><option>软件</option></select>班级<select name="班级" class="span2">
+		<option>1102</option><option>1101</option></select> <input type="text" placeholder="请输入学号或姓名" class="input-medium">
+		<button type="submit" class="btn"><i class="icon-search"></i>搜索</button></td></tr></table>
+		</form> 
+        <div class="box-content1"> 
+          <table class="table table-striped table-bordered bootstrap-datatable datatable">
+
+							 	       <th  >选择</th>
+							 	        <th  >学号</th>
+							 	        <th   >姓名</th>
+							 	        <th   >性别</th>
+							 	        <th   >民族</th>
+							 	        <th     >籍贯</th>
+							 	        <th    >政治面貌</th>
+							 	        <th   >学院</th>
+							 	        <th   >专业</th>
+							 	        <th   >班级</th>
+							 	        <th  >身份证号</th>
+							 	        <th   >手机号码</th>
+							 	         
+							 	        <th     >操作</th>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+							 	        <td>20111429</td>
+							 	        <td>小麦</td>
+							 	        <td>男</td>
+							 	        <td>王彦</td>
+							 	        <td>江西</td>
+							 	        <td>团员</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	       
+							 	      
+							 	 <td><a class="btn btn-info" href="#basicInfo" data-toggle="modal"> <i class="icon-eye-open icon-white"></i> 详细</a> <a class="btn btn-info" href="man_upStdInfo.html"> <i class="icon-edit icon-white"></i> 编辑 </a> <a class="btn btn-danger" href="#"> <i class="icon-trash icon-white"></i> 删除 </a> </td> 
+							 	      </tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+							 	        <td>20111429</td>
+							 	        <td>小麦</td>
+							 	        <td>男</td>
+							 	        <td>王彦</td>
+							 	        <td>江西</td>
+							 	        <td>团员</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	      
+							 	      
+							 	    <td><a class="btn btn-info" href="#basicInfo" data-toggle="modal"> <i class="icon-eye-open icon-white"></i> 详细</a> <a class="btn btn-info" href="#"> <i class="icon-edit icon-white"></i> 编辑 </a> <a class="btn btn-danger" href="#"> <i class="icon-trash icon-white"></i> 删除 </a> </td> 
+							 	      </tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+							 	        <td>20111429</td>
+							 	        <td>小麦</td>
+							 	        <td>男</td>
+							 	        <td>王彦</td>
+							 	        <td>江西</td>
+							 	        <td>团员</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	       
+							 	       
+							  <td><a class="btn btn-info" href="#basicInfo" data-toggle="modal"> <i class="icon-eye-open icon-white"></i> 详细</a> <a class="btn btn-info" href="#"> <i class="icon-edit icon-white"></i> 编辑 </a> <a class="btn btn-danger" href="#"> <i class="icon-trash icon-white"></i> 删除 </a> </td> 
+							 	      </tr>
+                                         <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+							 	        <td>20111429</td>
+							 	        <td>小麦</td>
+							 	        <td>男</td>
+							 	        <td>王彦</td>
+							 	        <td>江西</td>
+							 	        <td>团员</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	       
+							 	      
+							 	    <td><a class="btn btn-info" href="#basicInfo" data-toggle="modal"> <i class="icon-eye-open icon-white"></i> 详细</a> <a class="btn btn-info" href="#"> <i class="icon-edit icon-white"></i> 编辑 </a> <a class="btn btn-danger" href="#"> <i class="icon-trash icon-white"></i> 删除 </a> </td> 
+                                        </tr>	
+	 	      </table> 
+        </div>
+      </div>
+      <p>&nbsp;</p>
+		</div>
+        
+		 <div class="tab-pane" id="messages">look unsubmit informaiton<br/>
+		 	<div class="box-header well" data-original-title="data-original-title">
+			  <h2><i class="icon-user"></i>修改未提交信息</h2>
+			 <div class="box-icon"> <input name="checkbox11" type="checkbox" value="checkbox" />全选   <button class="btn"><i class="icon-plus-sign"></i>添加</button> <button class="btn"><i class="icon-trash"></i>删除</button> <button class="btn"><i class="icon-print"></i>导出</button> </div>
+			</div>
+			<div class="box-content">
+          <table class="table table-striped table-bordered bootstrap-datatable datatable">
+									<tr>
+							 	       <th  >选择</th>
+							 	        <th  >学号</th>
+							 	        <th   >姓名</th>
+							 	        <th   >性别</th>
+							 	        <th   >民族</th>
+							 	        <th     >籍贯</th>
+							 	        <th    >政治面貌</th>
+							 	        <th   >学院</th>
+							 	        <th   >专业</th>
+							 	        <th   >班级</th>
+							 	        <th  >身份证号</th>
+							 	        <th   >手机号码</th>
+									  </tr>
+							 	      <tr>
+									  	<td><input name="checkbox11" type="checkbox"/></td> 
+							 	        <td>20111429</td>
+							 	        <td>小麦</td>
+							 	        <td><input type="text" class="text" size="5"></td>
+							 	       	<td><input type="text" class="text" size="5"></td>
+									   	<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										
+							 	      </tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+							 	        <td>20111429</td>
+							 	        <td>小麦</td>
+							 	        <td><input type="text" class="text" size="5"></td>
+							 	       	<td><input type="text" class="text" size="5"></td>
+									   	<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										
+							 	      </tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+							 	        <td>20111429</td>
+							 	        <td>小麦</td>
+							 	        <td><input type="text" class="text" size="5"></td>
+							 	       	<td><input type="text" class="text" size="5"></td>
+									   	<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										
+							 	      </tr>
+                                         <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+							 	        <td>20111429</td>
+							 	        <td>小麦</td>
+							 	        <td><input type="text" class="text" size="5"></td>
+							 	       	<td><input type="text" class="text" size="5"></td>
+									   	<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										
+									</tr>	
+	 	      </table> 
+        </div>
+			<div align="center" class="btn-large">
+			<button class="btn btn-primary"><i class="icon-inbox icon-white"></i>保存</button>
+			<button class="btn btn-primary"><i class="icon-ok icon-white"></i>提交</button>
+			</div>     
+		 </div>
+        </div>
+      </div>
+      <div class="box-header well" data-original-title="data-original-title">
+  <div align="left"><h5>
+  友情链接：<a href="http://www.nchu.edu.cn//">南昌航空大学官网</a>  <a href="http://jwc.nchu.edu.cn//">南昌航空大学教务处</a> </h5>
+  </div>
+  </div>
+ 
+   </td>
+   
+  </tr>   
+
+  <tr>
+    <td height="15" colspan="3" valign="top">
+	<footer>
+  <p class="pull-left">&copy; <a href="http://usman.it" target="_blank">南昌航空大学 学工处</a> 2013</p>
+			
+	</td>
+  </tr>
+</table>
+
+</body>  
+<script src="js/jquery-1.7.2.min.js"></script>
+	   
+	<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+	   
+	<script src="js/bootstrap-transition.js"></script>
+	   
+	<script src="js/bootstrap-alert.js"></script>
+	   
+	<script src="js/bootstrap-modal.js"></script>
+	   
+	<script src="js/bootstrap-dropdown.js"></script>
+	   
+	<script src="js/bootstrap-scrollspy.js"></script>
+	   
+	<script src="js/bootstrap-tab.js"></script>
+	   
+	<script src="js/bootstrap-tooltip.js"></script>
+	   
+	<script src="js/bootstrap-popover.js"></script>
+	   
+	<script src="js/bootstrap-button.js"></script>
+	   
+	<script src="js/bootstrap-collapse.js"></script>
+	   
+	<script src="js/bootstrap-carousel.js"></script>
+	   
+	<script src="js/bootstrap-typeahead.js"></script>
+	   
+	<script src="js/bootstrap-tour.js"></script>
+	   
+	<script src="js/jquery.cookie.js"></script>
+	   
+	<script src='js/fullcalendar.min.js'></script>
+	   
+	<script src='js/jquery.dataTables.min.js'></script>
+
+	   
+	<script src="js/excanvas.js"></script>
+	<script src="js/jquery.flot.min.js"></script>
+	<script src="js/jquery.flot.pie.min.js"></script>
+	<script src="js/jquery.flot.stack.js"></script>
+	<script src="js/jquery.flot.resize.min.js"></script>
+	   
+
+	   
+	<script src="js/jquery.chosen.min.js"></script>
+	   
+	<script src="js/jquery.uniform.min.js"></script>
+	   
+	<script src="js/jquery.colorbox.min.js"></script>
+	   
+	<script src="js/jquery.cleditor.min.js"></script>
+	   
+	<script src="js/jquery.noty.js"></script>
+	   
+	<script src="js/jquery.elfinder.min.js"></script>
+	   
+	<script src="js/jquery.raty.min.js"></script>
+	   
+	<script src="js/jquery.iphone.toggle.js"></script>
+	   
+	<script src="js/jquery.autogrow-textarea.js"></script>
+	   
+	<script src="js/jquery.uploadify-3.1.min.js"></script>
+	   
+	<script src="js/jquery.history.js"></script>
+	   
+	<script src="js/charisma.js"></script>	
+</html>

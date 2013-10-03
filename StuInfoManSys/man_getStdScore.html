@@ -1,0 +1,255 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+<title>学生信息查询</title>
+
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script language="javascript" src="js/bootstrap-modal.js" ></script>
+	<!-- The styles -->
+       <link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet" />
+<style type="text/css">
+	  body {
+		padding-bottom: 40px;
+	  }
+	  .sidebar-nav {
+		padding: 9px 0;
+	  }
+	</style>
+
+<link href="css/charisma-app.css" rel="stylesheet" /> 
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/getimage.jpg">
+    
+<link rel="shortcut icon" href="Templates/img/favicon.ico" />
+            
+</head>
+
+<body><table width="90%" align="center" border="0" cellpadding="0" cellspacing="0">
+      
+  <tr>
+    <td height="40" colspan="3" valign="top"><div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-fluid"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="http://www.jxau.edu.cn/"> <img alt="Charisma Logo" src="img/getimage.jpg" /> <span>南昌航空大学</span></a>      
+            <div class="btn-group pull-right" > <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-user"></i><span class="hidden-phone"> 管理员退出</span></li><span class="caret"></span> </a>   
+               
+            </div>
+              
+            <div class="top-nav nav-collapse">
+              <ul class="nav">
+                <li><a href="#">学生信息管理系统</a></li>
+              </ul>
+            </div>
+              
+        </div>
+      </div>
+    </div></td>
+  </tr>
+  <tr>
+  <td height="10" colspan="3"></td>
+  </tr>
+  <tr>
+    <td width="200" height="100%" valign="top">
+	<ul class="nav nav-tabs nav-stacked main-menu">
+      <li class="nav-header hidden-tablet">菜单</li>
+	  <li><a class="ajax-link" href="man_index.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 管理员的主页</span></a></li>
+	  <li><a class="ajax-link" href="man_getStdInfo.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 查看学生信息</span></a></li>
+	  <li><a class="ajax-link" href="man_upStdInfo.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 修改学生信息</span></a></li>
+	  <li><a class="ajax-link" href="man_saveStdInfo.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 录入学生信息</span></a></li>
+	  <li><a class="ajax-link" href="man_getStdScore.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 查看学生成绩单</span></a></li>
+	  <li><a class="ajax-link" href="man_upStdScore.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 修改学生成绩单</span></a></li>	  
+      <li><a class="ajax-link" href="man_saveStdScore.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 录入学生成绩单</span></a></li>	  
+	   <li><a class="ajax-link" href="man_getNotion.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 发布公告等<span ><font color="#FF0000">(消息1)</font></span></span></a></li>
+	</ul>
+    </td>
+	<td width="5"></td>
+    <td width="861" valign="top">    
+	
+	  <div id="basicInfo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">小麦的基本信息</h3>
+  </div>
+  <div class="modal-body">
+    <table  class="table table-striped table-bordered bootstrap-datatable datatable">
+		  <tr>
+			<td>学号</td>
+			<td>20111429</td>
+			<td>姓名</td>
+			<td>熊安平</td>
+			<td>总分</td>
+			<td>300</td>
+		  </tr>
+		  <tr>
+			<td colspan="2" rowspan="2">课程</td>
+			<td colspan="2">语文</td>
+			<td colspan="2">100</td>
+		  </tr>
+		  <tr>
+			<td colspan="2">数学</td>
+			<td colspan="2">200</td>
+		  </tr>
+		    
+		</table> 
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+    
+  </div>
+</div>
+     
+      <div class="tab-content1">
+        <div class="tab-pane active" id="home">
+			<div class="box span12">
+        <div class="box-header well" data-original-title="data-original-title">
+          <h2><i class="icon-user"></i> 学生成绩</h2>
+          <div class="box-icon"> <input name="checkbox11" type="checkbox" value="checkbox" />全选   <button class="btn"><i class="icon-refresh"></i>批量更新</button> <button class="btn"><i class="icon-edit"></i>批量修改</button> <button class="btn"><i class="icon-print"></i>导出</button> </div>
+        </div>
+        <div class="box-content">
+        <form class="well form-search"><table>
+		<tr><td>学院<select name="学院" class="span2" ><option>农学院</option><option>园林院</option><option>动科院</option><option>工学院</option><option>软件院</option><option>计信院</option><option>经管院</option>
+	</select>专业<select name="专业" class="span2"><option>软件工程</option><option>数字媒体</option><option>软件英语</option></select>班级<select name="班级" class="span2">
+		<option>1102</option><option>1101</option></select>学期<select name="nainji" class="span2"><option>20101</option><option>20102</option><option>20112</option><option>20112</option></select><input type="text" placeholder="请输入学号或姓名" class="input-medium">
+		<button type="submit" class="btn"><i class="icon-search"></i>搜索</button></td></tr></table>
+		</form> 
+          <table class="table table-striped table-bordered bootstrap-datatable datatable">
+            <thead>
+              <tr>
+			  <th>序号</th>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>总分</th>
+                 
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+			  <td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+                <td>20111429</td>
+                <td>张三</td>
+                <td class="center">2012/01/01</td>
+                <td class="center">600</td>
+                
+                 <td><a class="btn btn-info" href="#basicInfo" data-toggle="modal"> <i class="icon-eye-open icon-white"></i> 详细</a>  <a class="btn btn-info" href="man_upStdScore.html"> <i class="icon-edit icon-white"></i> 编辑 </a> <a class="btn btn-danger" href="#"> <i class="icon-trash icon-white"></i> 删除 </a> </td>
+              </tr>
+              <tr>
+			  <td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+                <td>20111429</td>
+                <td>李四</td>
+                <td class="center">2012/01/01</td>
+                <td class="center">500</td>
+               
+                
+                 <td><a class="btn btn-info" href="#basicInfo" data-toggle="modal"> <i class="icon-eye-open icon-white"></i> 详细</a>  <a class="btn btn-info" href="man_upStdScore.html"> <i class="icon-edit icon-white"></i> 编辑 </a> <a class="btn btn-danger" href="#"> <i class="icon-trash icon-white"></i> 删除 </a> </td>
+              </tr>
+              <tr>
+			  <td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+                <td>20111429</td>
+                <td>王五</td>
+                <td class="center">2012/01/01</td>
+                <td class="center">400</td>
+                
+                 <td> <a class="btn btn-info" href="#basicInfo" data-toggle="modal"> <i class="icon-eye-open icon-white"></i> 详细</a> <a class="btn btn-info" href="#profile"> <i class="icon-edit icon-white"></i> 编辑 </a> <button class="btn btn-danger" onclick="my_alert"> <i class="icon-trash icon-white"></i> 删除 </button> </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p>&nbsp;</p>
+		</div>
+        <div class="tab-pane" id="profile">
+        
+        
+        </hr></hr></hr>       
+    
+  <div class="box-header well" data-original-title="data-original-title">
+  <div align="left"><h5>
+  友情链接：<a href="http://www.nchu.edu.cn//">南昌航空大学官网</a>  <a href="http://jwc.nchu.edu.cn//">南昌航空大学教务处</a> </h5>
+  </div>
+  </div>
+         </td>
+  </tr>
+  <tr>
+    <td height="15" colspan="3" valign="top">
+	<footer>
+  <p class="pull-left">&copy; <a href="http://usman.it" target="_blank">南昌航空大学 学工处</a> 2013</p>
+			
+	</td>
+  </tr>
+</table>
+
+</body>  
+		<script src="js/jquery-1.7.2.min.js"></script>
+     
+  <script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+     
+  <script src="js/bootstrap-transition.js"></script>
+     
+  <script src="js/bootstrap-alert.js"></script>
+     
+  <script src="js/bootstrap-modal.js"></script>
+     
+  <script src="js/bootstrap-dropdown.js"></script>
+     
+  <script src="js/bootstrap-scrollspy.js"></script>
+     
+  <script src="js/bootstrap-tab.js"></script>
+     
+  <script src="js/bootstrap-tooltip.js"></script>
+     
+  <script src="js/bootstrap-popover.js"></script>
+     
+  <script src="js/bootstrap-button.js"></script>
+     
+  <script src="js/bootstrap-collapse.js"></script>
+     
+  <script src="js/bootstrap-carousel.js"></script>
+     
+  <script src="js/bootstrap-typeahead.js"></script>
+     
+  <script src="js/bootstrap-tour.js"></script>
+     
+  <script src="js/jquery.cookie.js"></script>
+     
+  <script src='js/fullcalendar.min.js'></script>
+     
+  <script src='js/jquery.dataTables.min.js'></script>
+
+     
+  <script src="js/excanvas.js"></script>
+  <script src="js/jquery.flot.min.js"></script>
+  <script src="js/jquery.flot.pie.min.js"></script>
+  <script src="js/jquery.flot.stack.js"></script>
+  <script src="js/jquery.flot.resize.min.js"></script>
+     
+
+     
+  <script src="js/jquery.chosen.min.js"></script>
+     
+  <script src="js/jquery.uniform.min.js"></script>
+     
+  <script src="js/jquery.colorbox.min.js"></script>
+     
+  <script src="js/jquery.cleditor.min.js"></script>
+     
+  <script src="js/jquery.noty.js"></script>
+     
+  <script src="js/jquery.elfinder.min.js"></script>
+     
+  <script src="js/jquery.raty.min.js"></script>
+     
+  <script src="js/jquery.iphone.toggle.js"></script>
+     
+  <script src="js/jquery.autogrow-textarea.js"></script>
+     
+  <script src="js/jquery.uploadify-3.1.min.js"></script>
+     
+  <script src="js/jquery.history.js"></script>
+     
+  <script src="js/charisma.js"></script>  
+</html>

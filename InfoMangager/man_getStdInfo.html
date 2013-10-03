@@ -1,0 +1,380 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+<title>个人信息系统</title>
+
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script language="javascript" src="js/bootstrap-modal.js" ></script>
+	<!-- The styles -->
+     <link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet" />
+<style type="text/css">
+	  body {
+		padding-bottom: 40px;
+	  }
+	  .sidebar-nav {
+		padding: 9px 0;
+	  }
+	</style>
+
+<link href="css/charisma-app.css" rel="stylesheet" /> 
+
+    
+<link rel="shortcut icon" href="Templates/img/favicon.ico" />
+            
+</head>
+
+<body><table width="90%" align="center" border="0" cellpadding="0" cellspacing="0">
+      
+  <tr>
+    <td height="40" colspan="3" valign="top"><div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-fluid"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse"> <span class="icon-bar"></span> </a>       
+           <!-- <div class="btn-group pull-right" > <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <i class="icon-user"></i><span class="hidden-phone"> 管理员退出</span></li><span class="caret"></span> </a>   
+               
+            </div>-->
+              
+            <div class="top-nav nav-collapse">
+              <ul class="nav">
+                <li><i class="icon-user"></i><span class="hidden-phone"> 个人信息管理系统</span></li>
+              </ul>
+            </div>
+              
+        </div>
+      </div>
+    </div></td>
+  </tr>
+  <tr>
+  <td height="10" colspan="3"></td>
+  </tr> 
+  <tr>
+    <td width="200" height="100%" valign="top">
+	<ul class="nav nav-tabs nav-stacked main-menu">
+      <li class="nav-header hidden-tablet">菜单</li>
+	  <li><a class="ajax-link" href="man_index.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 主页</span></a></li>
+	  <li><a class="ajax-link" href="man_getStdInfo.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 查看联系人信息</span></a></li>
+	  <li><a class="ajax-link" href="man_upStdInfo.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 修改联系人信息</span></a></li>
+	  <li><a class="ajax-link" href="man_saveStdInfo.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> 录入联系人信息</span></a></li>	  
+	</ul>
+    </td>
+	
+	    <td width="5"></td>
+    <td width="861" valign="top">   
+	<div id="basicInfo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">小麦的基本信息</h3>
+  </div>
+
+<div class="box-content">
+        <form action="#" enctype="multipart/form-data" name="isForm" method="post">
+		 <table    class="table table-striped table-bordered bootstrap-datatable datatable">
+			   <tr>
+			   	<td width="102"><p>群组</p>
+				<p>&nbsp;</p></td>
+				<td><input type="text" class="input-small" name="std_address" /> </td>
+				<th width="102">姓名</th>
+				<th width="72"><input type="text" class="input-small" name="std_name" /> </th>
+               </tr>
+              <tr>
+              	<th width="102">民族</th>
+				<th width="72"><input type="text" class="input-small" name="std_name" /> </th>
+              
+				<th width="102" >性别</th>
+				<th width="99"  align="center">
+               <select class="input-small">
+ 					 <option name="man">男</option>
+ 					 <option name="woman">女</option> 
+				</select>
+             </th>				
+				
+			 </tr>			 
+			 <tr>			
+				<td width="102">手机号码</td>
+				<td height="48"><input type="text" class="input-small" name="std_address" /> </td>
+				<td width="102">个人邮箱</td>
+				<td><input type="text" class="input-small" name="std_address" /> </td>				
+			</tr>
+              <tr>	
+              	<td height="38">出生日期</td>
+				<td><input type="text" class="input-small" name="std_address" /> </td>	
+			 	
+				<td>身份证号</td>
+				<td width="102" ><input type="text" class="input-small" name="std_address" /> </td>	
+			</tr>
+            <tr>
+            <td height="38">籍贯</td>
+				<td colspan="3"><input type="text" class="input-large" name="std_address" /> </td>	
+            </tr>
+             <tr>
+                 <td>备注</td>
+				<td width="102" colspan="3"><input type="text" class="input-large" name="std_address" /> </td>				
+			 
+             </tr>
+			 <tr>
+				<td colspan="7">
+					<div align="center" >
+					<button class="btn btn-primary"><i class="icon-inbox icon-white"></i>保存</button>
+                    <button type="reset"  class="btn  btn-inverse" name="reset" ><i class="icon-remove"></i>清除</button>
+					</div>
+				</td>
+			 </tr></table> 
+		</div>
+        </div>
+		</div>
+        </form>
+
+     
+      <div class="tab-content">
+        <div class="tab-pane active" id="home">
+			<div class="box span12">
+        <div class="box-header well" data-original-title="data-original-title">
+          <h2><i class="icon-user"></i>基本信息</h2>
+         <div class="box-icon">  </div>
+        </div>
+		    <form class="well form-search"><table>
+		<tr><td>群组<select name="群组" class="span2" ><option>同学</option><option> 同事</option><option> 陌生人</option></select>
+		<input type="text" placeholder="请输入" class="input-medium">
+		<button type="submit" class="btn"><i class="icon-search"></i>搜索</button></td></tr></table>
+		</form> 
+        <div class="box-content1"> 
+          <table class="table table-striped table-bordered bootstrap-datatable datatable">
+
+							 	       <th  >选择</th>
+							 	        <th   >姓名</th>
+							 	        <th   >性别</th>
+							 	        <th   >民族</th>
+							 	        <th   >籍贯</th>
+							 	        <th   >生日</th>	        
+							 	         <th  >身份证号</th>
+							 	        <th   >手机号码</th>
+                                        <th>邮箱</th>
+                                        <th>备注</th>
+							 	        <th     >操作</th>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 						 	        
+							 	        <td>小麦</td>
+							 	        <td>男</td>
+							 	        <td>江西</td>							 	        
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+							 	       
+							 	      
+							 	 <td><button class="btn"><i class="icon-print"></i>导出</button><a class="btn btn-info" href="#basicInfo" data-toggle="modal"> <i class="icon-edit icon-white"></i> 编辑 </a> <a class="btn btn-danger" href="#"> <i class="icon-trash icon-white"></i> 删除 </a> </td> 
+							 	      </tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+							 	        <td>小麦</td>
+							 	        <td>男</td>
+							 	        <td>江西</td>							 	        
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+							 	      
+							 	      
+							 	    <td><button class="btn"><i class="icon-print"></i>导出</button><a class="btn btn-info" href="#"> <i class="icon-edit icon-white"></i> 编辑 </a> <a class="btn btn-danger" href="#"> <i class="icon-trash icon-white"></i> 删除 </a> </td> 
+							 	      </tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+							 	       <td>小麦</td>
+							 	        <td>男</td>
+							 	        <td>江西</td>							 	        
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+							 	       
+							  <td><button class="btn"><i class="icon-print"></i>导出</button> <a class="btn btn-info" href="#"> <i class="icon-edit icon-white"></i> 编辑 </a> <a class="btn btn-danger" href="#"> <i class="icon-trash icon-white"></i> 删除 </a> </td> 
+							 	      </tr>
+                                         <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+							 	       <td>小麦</td>
+							 	        <td>男</td>
+							 	        <td>江西</td>							 	        
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+							 	        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+							 	      
+							 	    <td><button class="btn"><i class="icon-print"></i>导出</button><a class="btn btn-info" href="#"> <i class="icon-edit icon-white"></i> 编辑 </a> <a class="btn btn-danger" href="#"> <i class="icon-trash icon-white"></i> 删除 </a> </td> 
+                                        </tr>	
+	 	      </table> 
+        </div>
+      </div>
+      <p>&nbsp;</p>
+		</div>
+        
+		 <div class="tab-pane" id="messages">look unsubmit informaiton<br/>
+		 	<div class="box-header well" data-original-title="data-original-title">
+			  <h2><i class="icon-user"></i>修改未提交信息</h2>
+			 <div class="box-icon"> <input name="checkbox11" type="checkbox" value="checkbox" />全选   <button class="btn"><i class="icon-plus-sign"></i>添加</button> <button class="btn"><i class="icon-trash"></i>删除</button> <button class="btn"><i class="icon-print"></i>导出</button> </div>
+			</div>
+			<div class="box-content">
+          <table class="table table-striped table-bordered bootstrap-datatable datatable">
+									<tr>
+							 	       <th  >选择</th>							 	        
+							 	        <th   >姓名</th>
+							 	        <th   >性别</th>
+							 	        <th   >民族</th>
+							 	        <th   >籍贯</th>
+							 	        <th   >生日</th>	        
+							 	         <th  >身份证号</th>
+							 	        <th   >手机号码</th>
+                                        <th>邮箱</th>
+                                        <th>备注</th>
+									  </tr>
+							 	      <tr>
+									  	<td><input name="checkbox11" type="checkbox"/></td>					 	       
+							 	        <td>小麦</td>
+							 	        <td><input type="text" class="text" size="5"></td>
+							 	       	<td><input type="text" class="text" size="5"></td>
+									   	<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>									
+										
+							 	      </tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+							 	        <td>20111429</td>
+							 	        <td>小麦</td>
+							 	        <td><input type="text" class="text" size="5"></td>
+							 	       	<td><input type="text" class="text" size="5"></td>
+									   	<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>										
+							 	      </tr>	
+							 	      <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+							 	        <td>20111429</td>
+							 	        <td>小麦</td>
+							 	        <td><input type="text" class="text" size="5"></td>
+							 	       	<td><input type="text" class="text" size="5"></td>
+									   	<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>										
+							 	      </tr>
+                                         <tr><td><input name="checkbox11" type="checkbox" value="checkbox" /></td> 
+							 	        <td>20111429</td>
+							 	        <td>小麦</td>
+							 	        <td><input type="text" class="text" size="5"></td>
+							 	       	<td><input type="text" class="text" size="5"></td>
+									   	<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>
+										<td><input type="text" class="text" size="5"></td>										
+									</tr>	
+	 	      </table> 
+        </div>
+			<div align="center" class="btn-large">
+			<button class="btn btn-primary"><i class="icon-inbox icon-white"></i>保存</button>
+			<button class="btn btn-primary"><i class="icon-ok icon-white"></i>提交</button>
+			</div>     
+		 </div>
+        </div>
+      </div>
+      <div class="box-header well" data-original-title="data-original-title">
+  <div align="left"><h5>
+  友情链接：<a href="http://www.sina.com.cn/">新浪</a>  </h5>
+  </div>
+  </div>
+         </td>
+  </tr>
+  <tr>
+    <td height="15" colspan="3" valign="top">
+	<footer>
+  <p class="pull-left">&copy; <a href="#" target="_blank"></a> 2013</p>
+			
+	</td>
+  </tr>
+</table>
+
+
+</body>  
+<script src="js/jquery-1.7.2.min.js"></script>
+	   
+	<script src="js/jquery-ui-1.8.21.custom.min.js"></script>
+	   
+	<script src="js/bootstrap-transition.js"></script>
+	   
+	<script src="js/bootstrap-alert.js"></script>
+	   
+	<script src="js/bootstrap-modal.js"></script>
+	   
+	<script src="js/bootstrap-dropdown.js"></script>
+	   
+	<script src="js/bootstrap-scrollspy.js"></script>
+	   
+	<script src="js/bootstrap-tab.js"></script>
+	   
+	<script src="js/bootstrap-tooltip.js"></script>
+	   
+	<script src="js/bootstrap-popover.js"></script>
+	   
+	<script src="js/bootstrap-button.js"></script>
+	   
+	<script src="js/bootstrap-collapse.js"></script>
+	   
+	<script src="js/bootstrap-carousel.js"></script>
+	   
+	<script src="js/bootstrap-typeahead.js"></script>
+	   
+	<script src="js/bootstrap-tour.js"></script>
+	   
+	<script src="js/jquery.cookie.js"></script>
+	   
+	<script src='js/fullcalendar.min.js'></script>
+	   
+	<script src='js/jquery.dataTables.min.js'></script>
+
+	   
+	<script src="js/excanvas.js"></script>
+	<script src="js/jquery.flot.min.js"></script>
+	<script src="js/jquery.flot.pie.min.js"></script>
+	<script src="js/jquery.flot.stack.js"></script>
+	<script src="js/jquery.flot.resize.min.js"></script>
+	   
+
+	   
+	<script src="js/jquery.chosen.min.js"></script>
+	   
+	<script src="js/jquery.uniform.min.js"></script>
+	   
+	<script src="js/jquery.colorbox.min.js"></script>
+	   
+	<script src="js/jquery.cleditor.min.js"></script>
+	   
+	<script src="js/jquery.noty.js"></script>
+	   
+	<script src="js/jquery.elfinder.min.js"></script>
+	   
+	<script src="js/jquery.raty.min.js"></script>
+	   
+	<script src="js/jquery.iphone.toggle.js"></script>
+	   
+	<script src="js/jquery.autogrow-textarea.js"></script>
+	   
+	<script src="js/jquery.uploadify-3.1.min.js"></script>
+	   
+	<script src="js/jquery.history.js"></script>
+	   
+	<script src="js/charisma.js"></script>	
+</html>
